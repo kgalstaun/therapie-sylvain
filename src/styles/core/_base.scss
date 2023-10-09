@@ -1,0 +1,34 @@
+// reset
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Perfect DOS VGA 437 Win", arial;
+  -webkit-font-smoothing: antialiased;
+  color: $color-white;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+html {
+  overflow-y: scroll;
+  font-size: 62.5%;
+
+  div#app {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+}
+
+pre {
+  font-size: $font-size-sm;
+}
+
+li {
+  list-style: none;
+}
