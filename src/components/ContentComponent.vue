@@ -50,15 +50,10 @@ async function fetchContent() {
   display: flex;
   justify-content: center;
   &__container {
-    max-width: 1600px;
-    @include defaultPadding;
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-    width: 100%;
-  }
-
-  &__about {
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
 </style>
