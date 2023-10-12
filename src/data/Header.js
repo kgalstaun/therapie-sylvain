@@ -1,12 +1,14 @@
-import { ref, computed } from "vue";
+import { ref } from "vue";
 
-const text = ref(null);
+const header = ref(null);
 
 const Header = {
-  set(newText) {
-    text.value = newText;
+  set(newHeader) {
+    header.value = newHeader;
   },
-  getText: computed(() => text.value),
+  get() {
+    return header.value;
+  },
 };
 
 export default Header;

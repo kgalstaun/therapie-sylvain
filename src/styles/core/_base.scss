@@ -2,9 +2,8 @@
 * {
   padding: 0;
   margin: 0;
-  font-family: "Perfect DOS VGA 437 Win", arial;
+  font-family: "Calgary", arial;
   -webkit-font-smoothing: antialiased;
-  color: $color-white;
 
   a {
     color: inherit;
@@ -15,13 +14,11 @@
 html {
   overflow-y: scroll;
   font-size: 62.5%;
+  background-color: #eeebe1;
 
   div#app {
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    min-height: 100vh;
   }
 }
 
