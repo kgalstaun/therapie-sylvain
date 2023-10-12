@@ -17,7 +17,7 @@ import HeaderHeroComponent from "./HeaderHeroComponent.vue";
 .header {
   display: flex;
   justify-content: center;
-  align-items: start;
+  align-items: flex-start;
 
   max-height: 100vh;
 

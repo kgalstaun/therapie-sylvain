@@ -1,7 +1,7 @@
 <template>
   <main class="content">
     <div class="content__container">
-      <template v-if="loaded">
+      <template v-if="loaded && !error">
         <component
           v-for="component in content"
           :key="component"
@@ -13,19 +13,20 @@
 </template>
 
 <script setup>
-import QueryService from "@/service/QueryService";
-import ContentQuery from "@/queries/ContentQuery";
-import TextImage from "./TextImageComponent.vue";
-
 import { onMounted, ref } from "vue";
 
-let loaded = ref(false);
+import QueryService from "@/service/QueryService";
+import ContentQuery from "@/queries/ContentQuery";
 
-const content = ref();
+import TextImage from "./TextImageComponent.vue";
 
 const components = {
   TextImage,
 };
+
+let loaded = ref(false);
+let error = ref(false);
+const content = ref();
 
 onMounted(() => {
   fetchContent();
