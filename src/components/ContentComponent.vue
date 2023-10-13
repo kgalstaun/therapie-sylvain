@@ -33,7 +33,11 @@ onMounted(() => {
 });
 
 async function fetchContent() {
-  QueryService.fetch(ContentQuery)
+  const locale = window.location.pathname.startsWith("/en")
+    ? ["en"]
+    : ["nl_NL", "en"];
+
+  QueryService.fetch(ContentQuery, { locale })
     .then((data) => {
       content.value = data.site.components;
       loaded.value = true;
