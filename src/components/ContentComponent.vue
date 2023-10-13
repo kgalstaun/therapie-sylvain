@@ -65,5 +65,11 @@ async function fetchContent() {
   &__item {
     margin-top: 10.8rem;
   }
+
+  @media screen and (max-width: $screen-size-lg) {
+    &__item {
+      margin-top: 3.6rem;
+    }
+  }
 }
 </style>

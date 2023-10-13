@@ -33,7 +33,11 @@ onMounted(() => {});
     }
   }
 
-  &__text {
+  @media screen and (max-width: $screen-size-lg) {
+    img {
+      border-radius: 0px;
+      width: 100vw;
+    }
   }
 }
 </style>

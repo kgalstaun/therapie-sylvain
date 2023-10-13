@@ -61,5 +61,23 @@ defineProps(["data"]);
       }
     }
   }
+
+  @media screen and (max-width: $screen-size-lg) {
+    &__text-image-container {
+      grid-template-columns: 1fr;
+
+      &.text-right {
+        grid-template-columns: 1fr;
+
+        & > *:first-child {
+          order: 1;
+        }
+
+        & > *:last-child {
+          order: 2;
+        }
+      }
+    }
+  }
 }
 </style>
