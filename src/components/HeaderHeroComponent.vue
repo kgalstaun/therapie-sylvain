@@ -22,7 +22,7 @@ onMounted(() => {});
       object-fit: cover;
       object-position: center;
       width: 100vw;
-      max-height: calc(100vh - 157px);
+      max-height: calc(100vh - 192px);
     }
   }
 

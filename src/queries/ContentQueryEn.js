@@ -2,7 +2,7 @@ import { gql } from "graphql-request";
 
 const ContentQuery = gql`
   query Content {
-    site(where: { id: "clnimn3cqj6gc0aw53ife2zxy" }, locales: nl_NL) {
+    site(where: { id: "clnimn3cqj6gc0aw53ife2zxy" }, locales: en) {
       components {
         ... on Contact {
           id

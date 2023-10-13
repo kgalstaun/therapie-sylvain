@@ -22,7 +22,11 @@ onMounted(() => {
 });
 
 async function fetchHero() {
-  QueryService.fetch(HeroQuery)
+  let currentRoute = window.location.pathname;
+
+  const locale = currentRoute.startsWith("/en") ? ["en"] : ["nl_NL", "en"];
+
+  QueryService.fetch(HeroQuery, { locale })
     .then((data) => {
       let header = data;
       Header.set(header);

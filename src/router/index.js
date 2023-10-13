@@ -3,8 +3,7 @@ import MainComponent from "@/components/MainComponent";
 
 const routes = [
   {
-    path: "/personal/:id",
-    name: "personal",
+    path: "/en",
     component: MainComponent,
   },
   {
