@@ -25,16 +25,8 @@ const header = computed(() => {
   justify-content: center;
   align-items: flex-start;
 
-  max-height: 100vh;
-
   &__container {
-    max-width: 1600px;
-    @include defaultPadding;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    @include contentOutline;
   }
 
   &__title {
@@ -47,6 +39,7 @@ const header = computed(() => {
     justify-content: center;
 
     height: 100%;
+    width: 100%;
   }
 }
 </style>

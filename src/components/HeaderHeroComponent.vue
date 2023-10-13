@@ -17,12 +17,19 @@ onMounted(() => {});
 
 <style lang="scss" scoped>
 .hero {
+  width: 100%;
+
   &__image {
+    width: 100%;
+
+    max-height: calc(100vh - 194px);
+
     img {
       object-fit: cover;
       object-position: center;
-      width: 100vw;
-      max-height: calc(100vh - 192px);
+      width: 100%;
+      max-height: calc(100vh - 194px);
+      border-radius: 2.5rem;
     }
   }
 

@@ -6,6 +6,8 @@
           v-for="component in content"
           :key="component"
           :is="components[component.type]"
+          :data="component"
+          class="content__item"
         ></component>
       </template>
     </div>
@@ -59,6 +61,9 @@ async function fetchContent() {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+  &__item {
+    margin-top: 10.8rem;
   }
 }
 </style>
