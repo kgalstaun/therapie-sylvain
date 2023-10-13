@@ -2,6 +2,7 @@
   <header class="header">
     <div class="header__container">
       <span class="header__title">{{ header.title }}</span>
+      <span class="header__lang">english</span>
       <div class="header__hero">
         <HeaderHeroComponent></HeaderHeroComponent>
       </div>
@@ -40,6 +41,19 @@ const header = computed(() => {
 
     height: 100%;
     width: 100%;
+  }
+
+  &__lang {
+    font-family: "Quicksand";
+    font-size: 1.8rem;
+    padding-bottom: 2rem;
+
+    margin-top: -2rem;
+
+    text-decoration: underline;
+    font-style: italic;
+
+    cursor: pointer;
   }
 }
 </style>

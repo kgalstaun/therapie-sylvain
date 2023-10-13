@@ -29,7 +29,7 @@ onMounted(() => {});
       object-position: center;
       width: 100%;
       max-height: calc(100vh - 194px);
-      border-radius: 2.5rem;
+      border-radius: 1rem;
     }
   }
 
