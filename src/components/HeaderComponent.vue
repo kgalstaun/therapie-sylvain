@@ -1,8 +1,13 @@
 <template>
   <header class="header">
     <div class="header__container">
-      <span class="header__title">{{ header.title }}</span>
-      <span class="header__lang">english</span>
+      <div class="header__top">
+        <span class="header__title">{{ header.title }} </span>
+        <span class="header__lang"
+          ><a @click="changeLang()">{{ langText }}</a></span
+        >
+      </div>
+
       <div class="header__hero">
         <HeaderHeroComponent></HeaderHeroComponent>
       </div>
@@ -11,12 +16,26 @@
 </template>
 
 <script setup>
-import { computed } from "vue";
+import { computed, onMounted, ref } from "vue";
 import HeaderHeroComponent from "./HeaderHeroComponent.vue";
 import Header from "@/data/Header";
 
 const header = computed(() => {
   return Header.get().site.hero;
+});
+
+const langText = computed(() => {
+  return english.value ? "nederlands" : "english";
+});
+
+const english = ref(false);
+
+const changeLang = () => {
+  english.value ? (window.location.href = "/") : (window.location.href = "/en");
+};
+
+onMounted(() => {
+  english.value = window.location.pathname.startsWith("/en") ? true : false;
 });
 </script>
 
@@ -31,8 +50,17 @@ const header = computed(() => {
   }
 
   &__title {
-    padding-top: 2.4rem;
-    font-size: clamp(2.4rem, 10vw, 7.2rem);
+    font-size: clamp(2.8rem, 10vw, 7.2rem);
+    line-height: 1;
+  }
+
+  &__top {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 4.8rem;
+    padding-bottom: 2.4rem;
   }
 
   &__hero {
@@ -46,7 +74,6 @@ const header = computed(() => {
   &__lang {
     font-family: "Quicksand";
     font-size: 1.8rem;
-    padding-bottom: 2rem;
 
     margin-top: -2rem;
 
@@ -54,6 +81,15 @@ const header = computed(() => {
     font-style: italic;
 
     cursor: pointer;
+  }
+
+  @media screen and (max-width: $screen-size-lg) {
+    &__title {
+      @include defaultMargin;
+    }
+    &__lang {
+      @include defaultMargin;
+    }
   }
 }
 </style>

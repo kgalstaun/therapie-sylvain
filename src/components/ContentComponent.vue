@@ -63,12 +63,12 @@ async function fetchContent() {
     align-items: center;
   }
   &__item {
-    margin-top: 10.8rem;
+    margin-top: 4.8rem;
   }
 
   @media screen and (max-width: $screen-size-lg) {
     &__item {
-      margin-top: 3.6rem;
+      margin-top: 2.6rem;
     }
   }
 }

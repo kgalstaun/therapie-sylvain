@@ -24,11 +24,13 @@ onMounted(() => {});
 
     max-height: calc(100vh - 194px);
 
+    position: relative;
+
     img {
       object-fit: cover;
       object-position: center;
       width: 100%;
-      max-height: calc(100vh - 194px);
+      max-height: calc(100vh - 294px);
       border-radius: 1rem;
     }
   }

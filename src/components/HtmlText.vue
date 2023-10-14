@@ -15,7 +15,10 @@ $component: "html-text";
     font-family: "Quicksand";
     font-size: 2.2rem;
     line-height: 1.6;
-    padding-bottom: 0rem;
+
+    &:last-child {
+      padding-bottom: 0rem;
+    }
   }
 
   h1,

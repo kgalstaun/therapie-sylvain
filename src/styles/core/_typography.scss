@@ -4,6 +4,7 @@ h3,
 h4,
 h5 {
   font-family: "Calgary";
+  letter-spacing: 0.15rem;
 }
 
 h1 {
@@ -16,7 +17,8 @@ h2 {
 }
 
 a {
-  color: $color-goldenrod-yellow !important;
+  font-style: normal;
+  font-family: "Quicksand";
 }
 
 p {
