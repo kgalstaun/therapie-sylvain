@@ -44,22 +44,22 @@ const components = {
       margin-top: 0rem !important;
 
       & + .content__item {
-        margin-top: 5.6rem;
+        margin-top: 4.6rem;
       }
     }
   }
   &__item {
     width: 100%;
-    margin-top: 10.4rem;
+    margin-top: 8.4rem;
 
     &:first-child {
-      margin-top: 5.6rem;
+      margin-top: 4.6rem;
     }
   }
 
   @media screen and (max-width: $screen-size-lg) {
     &__item {
-      margin-top: 5.6rem;
+      margin-top: 4.6rem;
     }
 
     &__container {

@@ -45,6 +45,8 @@ $component: "html-text";
 
   a {
     text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
   }
 
   @media screen and (max-width: $screen-size-lg) {

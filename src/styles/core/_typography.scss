@@ -5,6 +5,7 @@ h4,
 h5 {
   font-family: "Calgary";
   letter-spacing: 0.15rem;
+  font-weight: 400;
 }
 
 h1 {
@@ -24,6 +25,10 @@ a {
 p {
   font-size: $font-size-xl;
   padding-bottom: 2.5rem;
+}
+
+strong {
+  font-family: "Quicksand";
 }
 
 li {

@@ -45,6 +45,7 @@ defineProps(["data"]);
     max-width: 100rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    align-items: space-between;
     gap: 4rem;
 
     padding-top: 1.2rem;

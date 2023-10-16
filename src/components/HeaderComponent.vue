@@ -40,6 +40,10 @@ onMounted(() => {
   justify-content: center;
   align-items: flex-start;
 
+  &__container {
+    @include contentOutline;
+  }
+
   &__title {
     font-size: clamp(3.8rem, 5vw, 7.2rem);
     line-height: 1;
