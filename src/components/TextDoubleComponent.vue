@@ -31,39 +31,44 @@ defineProps(["data"]);
 <style lang="scss" scoped>
 .text-double {
   width: 100%;
+  display: flex;
+  justify-content: center;
 
   &__container {
     @include contentOutline;
-    width: 100%;
-    display: flex;
-    justify-content: center;
+
+    width: auto;
   }
 
   &__text-container {
     width: 100%;
     max-width: 100rem;
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
 
     padding-top: 1.2rem;
   }
 
-  @media screen and (max-width: $screen-size-md) {
+  &__title {
+    text-align: center;
+  }
+
+  @media screen and (max-width: $screen-size-lg) {
     &__text-container {
-      width: 100%;
-      max-width: 100rem;
       display: flex;
       flex-direction: column;
-      justify-content: start;
-      align-items: start;
-
-      padding-left: 7rem;
+      gap: 0rem;
     }
-
     &__text {
       &:first-child {
         margin-bottom: 2rem;
       }
+
+      @include defaultPadding;
+    }
+    &__title {
+      @include defaultPadding;
     }
   }
 }

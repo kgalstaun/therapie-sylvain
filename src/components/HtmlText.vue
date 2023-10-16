@@ -43,6 +43,10 @@ $component: "html-text";
     }
   }
 
+  a {
+    text-decoration: underline;
+  }
+
   @media screen and (max-width: $screen-size-lg) {
     h1,
     h2,
@@ -60,6 +64,9 @@ $component: "html-text";
   @media screen and (max-width: $screen-size-md) {
     p {
       font-size: 1.6rem;
+    }
+    ul {
+      padding-left: 4.8rem;
     }
   }
 }

@@ -7,7 +7,6 @@ const QueryService = {
       query,
       param
     );
-    console.log(data);
     return data;
   },
 };

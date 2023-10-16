@@ -71,6 +71,9 @@ defineProps(["data"]);
   }
 
   @media screen and (max-width: $screen-size-lg) {
+    &__container {
+      @include defaultMargin;
+    }
     &__text-image-container {
       grid-template-columns: 1fr;
 

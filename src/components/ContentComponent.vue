@@ -18,6 +18,7 @@ import { defineProps } from "vue";
 import TextImage from "./TextImageComponent.vue";
 import TextDouble from "./TextDoubleComponent.vue";
 import Hero from "./HeroComponent.vue";
+import FAQ from "./FAQcomponent.vue";
 
 defineProps(["data"]);
 
@@ -25,6 +26,7 @@ const components = {
   TextImage,
   TextDouble,
   Hero,
+  FAQ,
 };
 </script>
 

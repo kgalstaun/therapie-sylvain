@@ -15,10 +15,13 @@ const ContentQuery = gql`
           email
         }
         ... on Faq {
-          id
+          type
           title
           items {
-            id
+            title
+            text {
+              html
+            }
           }
         }
         ... on TextDouble {

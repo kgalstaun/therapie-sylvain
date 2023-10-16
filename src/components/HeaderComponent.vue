@@ -40,10 +40,6 @@ onMounted(() => {
   justify-content: center;
   align-items: flex-start;
 
-  &__container {
-    @include contentOutline;
-  }
-
   &__title {
     font-size: clamp(3.8rem, 5vw, 7.2rem);
     line-height: 1;
@@ -55,7 +51,8 @@ onMounted(() => {
     width: 100%;
     justify-content: space-between;
     align-items: center;
-    padding-top: 4.8rem;
+    padding-top: 3.8rem;
+    padding-bottom: 1rem;
   }
 
   &__hero {
@@ -70,6 +67,7 @@ onMounted(() => {
     font-family: "Quicksand";
 
     margin-top: -2rem;
+    margin-left: 4rem;
 
     text-decoration: underline;
     font-style: italic;
