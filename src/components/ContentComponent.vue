@@ -17,12 +17,14 @@ import { defineProps } from "vue";
 
 import TextImage from "./TextImageComponent.vue";
 import TextDouble from "./TextDoubleComponent.vue";
+import Hero from "./HeroComponent.vue";
 
 defineProps(["data"]);
 
 const components = {
   TextImage,
   TextDouble,
+  Hero,
 };
 </script>
 
@@ -35,6 +37,14 @@ const components = {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    > .hero {
+      margin-top: 0rem !important;
+
+      & + .content__item {
+        margin-top: 5.6rem;
+      }
+    }
   }
   &__item {
     width: 100%;
@@ -48,6 +58,14 @@ const components = {
   @media screen and (max-width: $screen-size-lg) {
     &__item {
       margin-top: 5.6rem;
+    }
+
+    &__container {
+      > .hero {
+        & + .content__item {
+          margin-top: 1.3rem;
+        }
+      }
     }
   }
 }

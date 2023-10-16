@@ -32,6 +32,11 @@ $component: "html-text";
 
   li {
     list-style: circle;
+    font-weight: normal !important;
+
+    div {
+      font-family: "Quicksand";
+    }
 
     &:not(:last-child) {
       padding-bottom: 2rem;
@@ -49,6 +54,12 @@ $component: "html-text";
 
     p {
       font-size: 1.8rem;
+    }
+  }
+
+  @media screen and (max-width: $screen-size-md) {
+    p {
+      font-size: 1.6rem;
     }
   }
 }

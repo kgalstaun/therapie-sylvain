@@ -7,21 +7,16 @@
           ><a @click="changeLang()">{{ langText }}</a></span
         >
       </div>
-
-      <div class="header__hero">
-        <HeaderHeroComponent></HeaderHeroComponent>
-      </div>
     </div>
   </header>
 </template>
 
 <script setup>
 import { computed, onMounted, ref } from "vue";
-import HeaderHeroComponent from "./HeaderHeroComponent.vue";
 import Header from "@/data/Header";
 
 const header = computed(() => {
-  return Header.get().site.hero;
+  return Header.get().meta;
 });
 
 const langText = computed(() => {
@@ -50,7 +45,7 @@ onMounted(() => {
   }
 
   &__title {
-    font-size: clamp(2.8rem, 10vw, 7.2rem);
+    font-size: clamp(3.8rem, 5vw, 7.2rem);
     line-height: 1;
     text-wrap: balance;
   }
@@ -73,7 +68,6 @@ onMounted(() => {
 
   &__lang {
     font-family: "Quicksand";
-    font-size: 1.8rem;
 
     margin-top: -2rem;
 
@@ -81,14 +75,20 @@ onMounted(() => {
     font-style: italic;
 
     cursor: pointer;
+
+    a {
+      font-size: clamp(1.4rem, 3vw, 1.8rem);
+    }
   }
 
   @media screen and (max-width: $screen-size-lg) {
-    &__title {
-      @include defaultMargin;
+    &__top {
+      padding-top: 2.3rem;
+      padding-bottom: 1.1rem;
     }
     &__lang {
-      @include defaultMargin;
+      padding-top: 2.3rem;
+      padding-bottom: 1.1rem;
     }
   }
 }

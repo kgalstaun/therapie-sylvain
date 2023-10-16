@@ -1,28 +1,29 @@
 <template>
   <div class="hero">
-    <div class="hero__image"><img :src="header.image.url" /></div>
+    <div class="hero__container">
+      <div class="hero__image"><img :src="data.image.url" /></div>
+    </div>
   </div>
 </template>
 
 <script setup>
-import Header from "@/data/Header";
-import { computed, onMounted } from "vue";
+import { defineProps } from "vue";
 
-const header = computed(() => {
-  return Header.get().site.hero;
-});
-
-onMounted(() => {});
+defineProps(["data"]);
 </script>
 
 <style lang="scss" scoped>
 .hero {
   width: 100%;
 
+  &__container {
+    @include contentOutline;
+  }
+
   &__image {
     width: 100%;
 
-    max-height: calc(100vh - 194px);
+    max-height: calc(100vh - 164px);
 
     position: relative;
 
@@ -30,7 +31,7 @@ onMounted(() => {});
       object-fit: cover;
       object-position: center;
       width: 100%;
-      max-height: calc(100vh - 294px);
+      max-height: calc(100vh - 164px);
       border-radius: 1rem;
     }
   }

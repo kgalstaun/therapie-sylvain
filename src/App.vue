@@ -11,7 +11,7 @@
 import { ref, onMounted } from "vue";
 
 import QueryService from "@/service/QueryService";
-import HeroQuery from "@/queries/HeroQuery";
+import MetaQuery from "@/queries/MetaQuery";
 import Header from "@/data/Header";
 
 import HeaderComponent from "./components/HeaderComponent.vue";
@@ -29,7 +29,7 @@ async function fetchHero() {
     ? ["en"]
     : ["nl_NL", "en"];
 
-  QueryService.fetch(HeroQuery, { locale })
+  QueryService.fetch(MetaQuery, { locale })
     .then((data) => {
       let header = data;
       Header.set(header);

@@ -44,6 +44,27 @@ defineProps(["data"]);
     max-width: 100rem;
     display: flex;
     justify-content: space-around;
+
+    padding-top: 1.2rem;
+  }
+
+  @media screen and (max-width: $screen-size-md) {
+    &__text-container {
+      width: 100%;
+      max-width: 100rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: start;
+
+      padding-left: 7rem;
+    }
+
+    &__text {
+      &:first-child {
+        margin-bottom: 2rem;
+      }
+    }
   }
 }
 </style>
