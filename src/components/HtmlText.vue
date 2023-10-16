@@ -13,8 +13,8 @@ $component: "html-text";
 .#{$component} {
   p {
     font-family: "Quicksand";
-    font-size: 2.2rem;
-    line-height: 1.6;
+    font-size: 2rem;
+    line-height: 1.725;
 
     &:last-child {
       padding-bottom: 0rem;
@@ -27,6 +27,15 @@ $component: "html-text";
   h4,
   h5 {
     font-family: "Calgary";
+    text-wrap: balance;
+  }
+
+  li {
+    list-style: circle;
+
+    &:not(:last-child) {
+      padding-bottom: 2rem;
+    }
   }
 
   @media screen and (max-width: $screen-size-lg) {

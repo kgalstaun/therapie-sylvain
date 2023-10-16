@@ -8,7 +8,7 @@ h5 {
 }
 
 h1 {
-  font-size: 4.2rem;
+  font-size: clamp(2.6rem, 5vw, 4.2rem);
 }
 
 h2 {

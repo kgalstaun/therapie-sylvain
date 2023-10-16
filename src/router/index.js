@@ -1,15 +1,15 @@
 import { createRouter, createWebHistory } from "vue-router";
-import MainComponent from "@/components/MainComponent";
+import HomeComponent from "@/components/HomeComponent.vue";
 
 const routes = [
   {
     path: "/en",
-    component: MainComponent,
+    component: HomeComponent,
   },
   {
     path: "/",
     name: "default",
-    component: MainComponent,
+    component: HomeComponent,
   },
   {
     path: "/:pathMatch(.*)*",

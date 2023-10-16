@@ -52,6 +52,7 @@ onMounted(() => {
   &__title {
     font-size: clamp(2.8rem, 10vw, 7.2rem);
     line-height: 1;
+    text-wrap: balance;
   }
 
   &__top {
@@ -60,7 +61,6 @@ onMounted(() => {
     justify-content: space-between;
     align-items: center;
     padding-top: 4.8rem;
-    padding-bottom: 2.4rem;
   }
 
   &__hero {

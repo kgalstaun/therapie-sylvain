@@ -16,7 +16,14 @@ const ContentQuery = gql`
           }
         }
         ... on TextDouble {
-          id
+          title
+          type
+          textLeft {
+            html
+          }
+          textRight {
+            html
+          }
         }
         ... on TextImage {
           type
@@ -25,6 +32,9 @@ const ContentQuery = gql`
           textRight
           text {
             html
+          }
+          image {
+            url
           }
           videoUrl
         }

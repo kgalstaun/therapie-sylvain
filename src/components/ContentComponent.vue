@@ -1,55 +1,29 @@
 <template>
   <main class="content">
     <div class="content__container">
-      <template v-if="loaded && !error">
-        <component
-          v-for="component in content"
-          :key="component"
-          :is="components[component.type]"
-          :data="component"
-          class="content__item"
-        ></component>
-      </template>
+      <component
+        v-for="component in data"
+        :key="component"
+        :is="components[component.type]"
+        :data="component"
+        class="content__item"
+      ></component>
     </div>
   </main>
 </template>
 
 <script setup>
-import { onMounted, ref } from "vue";
-
-import QueryService from "@/service/QueryService";
-import ContentQuery from "@/queries/ContentQuery";
+import { defineProps } from "vue";
 
 import TextImage from "./TextImageComponent.vue";
+import TextDouble from "./TextDoubleComponent.vue";
+
+defineProps(["data"]);
 
 const components = {
   TextImage,
+  TextDouble,
 };
-
-let loaded = ref(false);
-let error = ref(false);
-const content = ref();
-
-onMounted(() => {
-  fetchContent();
-});
-
-async function fetchContent() {
-  const locale = window.location.pathname.startsWith("/en")
-    ? ["en"]
-    : ["nl_NL", "en"];
-
-  QueryService.fetch(ContentQuery, { locale })
-    .then((data) => {
-      content.value = data.site.components;
-      loaded.value = true;
-      return true;
-    })
-    .catch((error) => {
-      console.error(error);
-      error.value = true;
-    });
-}
 </script>
 
 <style lang="scss" scoped>
@@ -63,12 +37,17 @@ async function fetchContent() {
     align-items: center;
   }
   &__item {
-    margin-top: 4.8rem;
+    width: 100%;
+    margin-top: 10.4rem;
+
+    &:first-child {
+      margin-top: 5.6rem;
+    }
   }
 
   @media screen and (max-width: $screen-size-lg) {
     &__item {
-      margin-top: 2.6rem;
+      margin-top: 5.6rem;
     }
   }
 }

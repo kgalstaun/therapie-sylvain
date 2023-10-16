@@ -17,7 +17,7 @@
         <div v-if="data.image?.url" class="text-image__image">
           <img :src="data.image.url" />
         </div>
-        <div v-if="data.videoUrl">
+        <div v-else-if="data.videoUrl">
           <VideoComponent :videoUrl="data.videoUrl"></VideoComponent>
         </div>
       </div>
@@ -59,6 +59,14 @@ defineProps(["data"]);
       & > *:last-child {
         order: 1;
       }
+    }
+  }
+
+  &__image {
+    width: 100%;
+    img {
+      max-width: 100%;
+      border-radius: 1rem;
     }
   }
 
