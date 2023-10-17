@@ -33,4 +33,11 @@ defineProps(["active"]);
     transform: scaleY(0);
   }
 }
+
+.plus {
+  @media screen and (max-width: $screen-size-lg) {
+    width: 14px;
+    heigth: 14px;
+  }
+}
 </style>

@@ -4,6 +4,7 @@
       <HeaderComponent v-if="loaded && !error"></HeaderComponent>
     </Transition>
     <router-view></router-view>
+    <FooterComponent v-if="loaded && !error"></FooterComponent>
   </div>
 </template>
 
@@ -15,6 +16,7 @@ import MetaQuery from "@/queries/MetaQuery";
 import Header from "@/data/Header";
 
 import HeaderComponent from "./components/HeaderComponent.vue";
+import FooterComponent from "./components/FooterComponent.vue";
 
 let loaded = ref(false);
 let error = ref(false);

@@ -83,7 +83,6 @@ const openFaqItem = (index) => {
   }
 
   &__list {
-    width: 100%;
     margin-top: 1.2rem;
 
     background-color: rgb(242, 242, 242);
@@ -112,6 +111,8 @@ const openFaqItem = (index) => {
 
     padding-top: 1rem;
     padding-bottom: 2rem;
+    padding-right: 1rem;
+    text-wrap: balance;
     line-height: normal;
 
     font-family: "Quicksand";
@@ -129,6 +130,12 @@ const openFaqItem = (index) => {
   }
 
   @media screen and (max-width: $screen-size-lg) {
+    &__list {
+      @include defaultMargin;
+    }
+    &__item-title {
+      font-size: 1.6rem;
+    }
   }
 }
 </style>
