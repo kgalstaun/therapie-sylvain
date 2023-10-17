@@ -7,14 +7,32 @@
         </h1>
       </div>
       <ul class="faq__list">
-        <li v-for="item in data.items" :key="item.title" class="faq__item">
-          <div class="faq__item-upper" role="button">
-            <span class="faq__item-title">
+        <li
+          ref="itemRefs"
+          v-for="(item, index) in data.items"
+          :key="item.title"
+          class="faq__item"
+        >
+          <div
+            class="faq__item-upper"
+            role="button"
+            @click="openFaqItem(index)"
+          >
+            <span
+              class="faq__item-title"
+              :class="{ active: openedItems.includes(index) }"
+            >
               {{ item.title }}
             </span>
-            <div>+</div>
+            <div class="faq__item-icon">
+              <SvgPlusComponent
+                :active="openedItems.includes(index)"
+              ></SvgPlusComponent>
+            </div>
           </div>
-          <HtmlText class="faq__item-text" :data="item.text.html"></HtmlText>
+          <div class="faq__item-text-container">
+            <HtmlText class="faq__item-text" :data="item.text.html"></HtmlText>
+          </div>
         </li>
       </ul>
     </div>
@@ -22,10 +40,35 @@
 </template>
 
 <script setup>
-import { defineProps } from "vue";
+import { defineProps, ref } from "vue";
 import HtmlText from "./HtmlText.vue";
+import SvgPlusComponent from "./svg/SvgPlusComponent.vue";
 
 defineProps(["data"]);
+const itemRefs = ref([]);
+
+const openedItems = ref([]);
+
+const openFaqItem = (index) => {
+  const isOpened = openedItems.value.includes(index);
+
+  const textContainerEl = itemRefs.value[index].querySelector(
+    ".faq__item-text-container"
+  );
+  const textEl = itemRefs.value[index].querySelector(".faq__item-text");
+
+  if (isOpened) {
+    openedItems.value = openedItems.value.filter(
+      (itemIndex) => itemIndex !== index
+    );
+
+    textContainerEl.style.maxHeight = "0px";
+  } else {
+    openedItems.value.push(index);
+
+    textContainerEl.style.maxHeight = textEl.clientHeight + "px";
+  }
+};
 </script>
 
 <style lang="scss" scoped>
@@ -36,12 +79,12 @@ defineProps(["data"]);
 
   &__container {
     @include contentOutline;
-    max-width: 76rem;
+    max-width: 86rem;
   }
 
   &__list {
     width: 100%;
-    padding-top: 1.2rem;
+    margin-top: 1.2rem;
 
     background-color: rgb(242, 242, 242);
     border-radius: 20px;
@@ -53,7 +96,7 @@ defineProps(["data"]);
       margin-bottom: 1.2rem;
       border-bottom: 1px solid black;
     }
-    z-index: 1;
+    overflow: hidden;
   }
 
   &__item-upper {
@@ -72,20 +115,17 @@ defineProps(["data"]);
     line-height: normal;
 
     font-family: "Quicksand";
-    font-size: 2.2rem;
+    font-size: 2rem;
+    font-weight: normal;
+  }
+
+  &__item-text-container {
+    transition: max-height 0.22s ease-out;
+    max-height: 0px;
   }
 
   &__item-text {
-    min-height: 0px;
-    max-height: 0px;
-    opacity: 0;
-    z-index: -1;
-    position: relative;
-
-    p {
-      z-index: -1;
-      position: relative;
-    }
+    padding-bottom: 2rem;
   }
 
   @media screen and (max-width: $screen-size-lg) {
