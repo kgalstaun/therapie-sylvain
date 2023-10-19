@@ -28,7 +28,7 @@
 <script setup>
 import { defineProps } from "vue";
 import HtmlText from "./HtmlText.vue";
-import VideoComponent from "./VideoComponent.vue";
+// import VideoComponent from "./VideoComponent.vue";
 
 defineProps(["data"]);
 </script>
@@ -64,6 +64,8 @@ defineProps(["data"]);
 
   &__image {
     width: 100%;
+    display: flex;
+    justify-content: center;
     img {
       max-width: 100%;
       border-radius: 1rem;

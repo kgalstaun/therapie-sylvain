@@ -40,6 +40,7 @@
 </template>
 
 <script setup>
+/* eslint-disable */
 import { defineProps, ref } from "vue";
 import HtmlText from "./HtmlText.vue";
 import SvgPlusComponent from "./svg/SvgPlusComponent.vue";
@@ -62,10 +63,12 @@ const openFaqItem = (index) => {
       (itemIndex) => itemIndex !== index
     );
 
+    textContainerEl.style.minHeight = "0px";
     textContainerEl.style.maxHeight = "0px";
   } else {
     openedItems.value.push(index);
 
+    textContainerEl.style.minHeight = textEl.clientHeight + "px";
     textContainerEl.style.maxHeight = textEl.clientHeight + "px";
   }
 };
@@ -120,21 +123,40 @@ const openFaqItem = (index) => {
     font-weight: normal;
   }
 
+  &__item-icon {
+    display: flex;
+    align-items: center;
+  }
+
   &__item-text-container {
-    transition: max-height 0.22s ease-out;
+    transition: min-height 0.33s ease-out, max-height 0.33s ease-out;
+    min-height: 0px;
     max-height: 0px;
+    max-width: 100%;
+    position: relative;
   }
 
   &__item-text {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
     padding-bottom: 2rem;
+    max-width: 100%;
+    height: min-content;
   }
 
   @media screen and (max-width: $screen-size-lg) {
-    &__list {
-      @include defaultMargin;
-    }
     &__item-title {
       font-size: 1.6rem;
+    }
+
+    &__container {
+      max-width: 100%;
+    }
+
+    &__list {
+      @include defaultPadding;
     }
   }
 }
