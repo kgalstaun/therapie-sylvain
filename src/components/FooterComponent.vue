@@ -28,8 +28,6 @@ defineProps(["data"]);
   height: 5rem;
 
   &__container {
-    @include contentOutline;
-
     display: flex;
     flex-direction: row;
     justify-content: center;
