@@ -82,7 +82,6 @@ const openFaqItem = (index) => {
 
   &__container {
     @include contentOutline;
-    max-width: 86rem;
   }
 
   &__list {
@@ -91,6 +90,9 @@ const openFaqItem = (index) => {
     background-color: rgb(242, 242, 242);
     border-radius: 20px;
     padding: 1.3rem 2.3rem;
+
+    max-width: 86rem;
+    width: 100%;
   }
 
   &__item {
@@ -157,6 +159,9 @@ const openFaqItem = (index) => {
 
     &__list {
       @include defaultPadding;
+
+      width: auto;
+      max-width: 100%;
     }
   }
 }
