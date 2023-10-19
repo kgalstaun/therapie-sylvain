@@ -53,7 +53,7 @@ onMounted(() => {
   &__top {
     display: flex;
     width: 100%;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding-top: 3.8rem;
     padding-bottom: 1rem;
@@ -87,6 +87,7 @@ onMounted(() => {
     &__top {
       padding-top: 2.3rem;
       padding-bottom: 1.1rem;
+      justify-content: space-between;
     }
     &__lang {
       padding-top: 2.3rem;

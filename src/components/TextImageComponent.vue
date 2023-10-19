@@ -17,7 +17,7 @@
         <div v-if="data.image?.url" class="text-image__image">
           <img :src="data.image.url" />
         </div>
-        <div v-else-if="data.videoUrl">
+        <div v-if="data.videoUrl">
           <VideoComponent :videoUrl="data.videoUrl"></VideoComponent>
         </div>
       </div>

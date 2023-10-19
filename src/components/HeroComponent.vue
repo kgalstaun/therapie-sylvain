@@ -39,7 +39,10 @@ defineProps(["data"]);
   @media screen and (max-width: $screen-size-lg) {
     img {
       border-radius: 0px;
-      width: 100vw;
+    }
+    &__container {
+      padding-left: 0px;
+      padding-right: 0px;
     }
   }
 }
