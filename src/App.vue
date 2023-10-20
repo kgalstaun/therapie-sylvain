@@ -10,6 +10,7 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
+import { useHead } from "unhead";
 
 import QueryService from "@/service/QueryService";
 import MetaQuery from "@/queries/MetaQuery";
@@ -23,7 +24,6 @@ let error = ref(false);
 
 onMounted(() => {
   fetchHero();
-  document.title = "Therapie bij Sylvain";
 });
 
 async function fetchHero() {
@@ -36,6 +36,17 @@ async function fetchHero() {
       let header = data;
       Header.set(header);
       loaded.value = true;
+
+      useHead({
+        title: data.meta.title,
+        meta: [
+          {
+            name: "description",
+            content: data.meta.description,
+          },
+        ],
+      });
+
       return true;
     })
     .catch((error) => {
