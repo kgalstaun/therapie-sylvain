@@ -15,16 +15,18 @@
 <script setup>
 import { defineProps } from "vue";
 
-import TextImage from "./TextImageComponent.vue";
-import TextDouble from "./TextDoubleComponent.vue";
 import Hero from "./HeroComponent.vue";
 import FAQ from "./FAQcomponent.vue";
+import TextImage from "./TextImageComponent.vue";
+import TextDouble from "./TextDoubleComponent.vue";
+import Video from "./VideoComponent.vue";
 
 defineProps(["data"]);
 
 const components = {
   TextImage,
   TextDouble,
+  Video,
   Hero,
   FAQ,
 };

@@ -18,7 +18,7 @@
           <img :src="data.image.url" />
         </div>
         <div v-else-if="data.videoUrl">
-          <VideoComponent :videoUrl="data.videoUrl"></VideoComponent>
+          <YtFrameComponent :url="data.videoUrl"></YtFrameComponent>
         </div>
       </div>
     </div>
@@ -28,7 +28,7 @@
 <script setup>
 import { defineProps } from "vue";
 import HtmlText from "./HtmlText.vue";
-// import VideoComponent from "./VideoComponent.vue";
+import YtFrameComponent from "./YtFrameComponent.vue";
 
 defineProps(["data"]);
 </script>

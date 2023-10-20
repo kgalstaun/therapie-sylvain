@@ -1,35 +1,37 @@
 <template>
-  <div class="video-container">
-    <iframe
-      width="560"
-      height="315"
-      :src="videoUrl"
-      frameborder="0"
-      allowfullscreen
-    ></iframe>
+  <div class="video-component">
+    <div class="video-component__container">
+      <div v-if="data.title" class="video-component__title">
+        <h1>
+          {{ data.title }}
+        </h1>
+      </div>
+      <div class="video-component__video">
+        <YtFrameComponent :url="data.url"> </YtFrameComponent>
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup>
 import { defineProps } from "vue";
+import YtFrameComponent from "./YtFrameComponent.vue";
 
-defineProps({
-  videoUrl: String,
-});
+defineProps(["data"]);
 </script>
 
-<style scoped>
-.video-container {
-  position: relative;
+<style lang="scss" scoped>
+.video-component {
   width: 100%;
-  padding-bottom: 56.25%; /* 16:9 aspect ratio */
-}
+  display: flex;
+  justify-content: center;
 
-iframe {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
+  &__container {
+    @include contentOutline;
+  }
+
+  &__video {
+    width: 100%;
+  }
 }
 </style>

@@ -10,10 +10,6 @@ const ContentQuery = gql`
             url
           }
         }
-        ... on Contact {
-          id
-          email
-        }
         ... on Faq {
           type
           title
@@ -23,6 +19,11 @@ const ContentQuery = gql`
               html
             }
           }
+        }
+        ... on Video {
+          type
+          title
+          url
         }
         ... on TextDouble {
           title
