@@ -38,7 +38,6 @@ onMounted(() => {
 .header {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
 
   &__container {
     @include contentOutline;
@@ -55,6 +54,7 @@ onMounted(() => {
     width: 100%;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     padding-top: 3.8rem;
     padding-bottom: 1rem;
   }
@@ -70,8 +70,8 @@ onMounted(() => {
   &__lang {
     font-family: "Quicksand";
 
-    margin-top: -2rem;
-    margin-left: 4rem;
+    margin-top: -0.5rem;
+    margin-bottom: 1rem;
 
     text-decoration: underline;
     font-style: italic;
@@ -79,19 +79,20 @@ onMounted(() => {
     cursor: pointer;
 
     a {
-      font-size: clamp(1.4rem, 3vw, 1.8rem);
+      font-size: clamp(1.2rem, 3vw, 1.6rem);
     }
   }
 
   @media screen and (max-width: $screen-size-lg) {
     &__top {
-      padding-top: 2.3rem;
-      padding-bottom: 1.1rem;
-      justify-content: space-between;
+      padding-top: 2.5rem;
+      padding-bottom: 0.5rem;
     }
     &__lang {
-      padding-top: 2.3rem;
-      padding-bottom: 1.1rem;
+      margin-top: 0rem;
+    }
+    a {
+      font-size: 1.4rem;
     }
   }
 }
